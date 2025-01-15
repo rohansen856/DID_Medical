@@ -1,0 +1,11 @@
+Flask
+pymongo
+python-dotenv
+pydantic
+pytz
+pypdf
+langchain
+chromadb # Vector storage
+pytest
+boto3
+langchain_community

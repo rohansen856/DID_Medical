@@ -1,0 +1,24 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  hardhat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8545:8545"  # Exposing Hardhat on port 8545
+    networks:
+      - devnet
+
+  ganache:
+    image: trufflesuite/ganache-cli
+    command: ["-h", "0.0.0.0", "-p", "7545", "-d"]
+    ports:
+      - "7545:7545"  # Exposing Ganache on port 7545
+    networks:
+      - devnet
+
+networks:
+  devnet:
+    driver: bridge

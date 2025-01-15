@@ -1,0 +1,7 @@
+
+{"chainId":1337,"type":"DEPLOYMENT_INITIALIZE"}
+{"artifactId":"HealthTokenModule#HealthToken","constructorArgs":[],"contractName":"HealthToken","dependencies":[],"from":"0xa146177f88e7d7bab03780ee9842ee34b76f5cef","futureId":"HealthTokenModule#HealthToken","futureType":"NAMED_ARTIFACT_CONTRACT_DEPLOYMENT","libraries":{},"strategy":"basic","strategyConfig":{},"type":"DEPLOYMENT_EXECUTION_STATE_INITIALIZE","value":{"_kind":"bigint","value":"0"}}
+{"futureId":"HealthTokenModule#HealthToken","networkInteraction":{"data":"0x","id":1,"type":"ONCHAIN_INTERACTION","value":{"_kind":"bigint","value":"0"}},"type":"NETWORK_INTERACTION_REQUEST"}
+{"futureId":"HealthTokenModule#HealthToken","networkInteractionId":1,"nonce":0,"transaction":{"fees":{"maxFeePerGas":{"_kind":"bigint","value":"3000000000"},"maxPriorityFeePerGas":{"_kind":"bigint","value":"1000000000"}},"hash":"0x4e0a56883dbaa07cca8f565f17eeea5c680df7441822ce81e6e8e73e800303ba"},"type":"TRANSACTION_SEND"}
+{"futureId":"HealthTokenModule#HealthToken","hash":"0x4e0a56883dbaa07cca8f565f17eeea5c680df7441822ce81e6e8e73e800303ba","networkInteractionId":1,"receipt":{"blockHash":"0x15e50dee6bcf13a59ab14a8bd35515d9a514fc63887f0473b5b7b2b8317a3d8e","blockNumber":1,"contractAddress":"0x1Fa1aC9446C483478c8DB36846F3711D9b5914e6","logs":[],"status":"SUCCESS"},"type":"TRANSACTION_CONFIRM"}
+{"futureId":"HealthTokenModule#HealthToken","result":{"address":"0x1Fa1aC9446C483478c8DB36846F3711D9b5914e6","type":"SUCCESS"},"type":"DEPLOYMENT_EXECUTION_STATE_COMPLETE"}

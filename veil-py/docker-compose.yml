@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  flask_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    depends_on:
+      - ai_model
+
+  ai_model:
+    build:
+      context: .
+      dockerfile: recommendation_system/Dockerfile
+    volumes:
+      - ./recommendation_system:/recommendation_system

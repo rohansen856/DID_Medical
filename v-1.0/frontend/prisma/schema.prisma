@@ -1,0 +1,167 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String   @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?  @db.Text
+  access_token      String?  @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?  @db.Text
+  session_state     String?
+  createdAt         DateTime @default(now()) @map(name: "created_at")
+  updatedAt         DateTime @updatedAt      @map(name: "updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map(name: "accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map(name: "sessions")
+}
+
+enum UserRole {
+  unset
+  patient
+  doctor
+  admin
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt      @map(name: "updated_at")
+  role          UserRole  @default(unset)
+
+  accounts Account[]
+  sessions Session[]
+  patients Patient[]
+  doctors  Doctor[]
+
+  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
+  stripePriceId          String?   @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+
+  @@map(name: "users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map(name: "verification_tokens")
+}
+
+model Doctor {
+  id           Int        @id @default(autoincrement())
+  userId       String     @unique
+  phoneNumber  String     @unique
+  aadharNumber String     @unique
+  mbbsId       String     @unique
+  specialty    String
+  verified     Boolean    @default(false)
+  blockId      String     @unique
+  appointments Appointment[]
+  Prescription Prescription[]
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([blockId])
+  @@index([aadharNumber])
+  @@index([mbbsId])
+}
+
+model Patient {
+  id               Int        @id @default(autoincrement())
+  userId           String     @unique
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  gender           String
+  dateOfBirth      DateTime
+  bloodType        String?   
+  chronicDiseases  String[]  
+  emergencyContact String
+  blockId          String     @unique
+  appointments     Appointment[]
+  prescriptions    Prescription[]
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([blockId])
+}
+
+model Appointment {
+  id           Int               @id @default(autoincrement())
+  doctorId     Int
+  patientId    Int
+  startTime    DateTime
+  endTime      DateTime
+  status       AppointmentStatus @default(PENDING)
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  doctor       Doctor    @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  patient      Patient   @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  @@unique([doctorId, startTime, endTime])
+  @@unique([patientId, startTime, endTime])
+}
+
+// Enum to track appointment status
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  CANCELED
+}
+
+model Medication {
+    id                     String      @id @default(uuid())
+    prescId                String
+    name                   String
+    dosage                 String
+    duration               String
+    additionalInstructions String?
+
+    prescriptions          Prescription   @relation(fields: [prescId], references: [id], onDelete: Cascade)
+}
+
+model Prescription {
+    id                     String      @id @default(uuid())
+    doctorId               Int
+    patientId              Int
+    issueDate              DateTime    @default(now())
+    validTill              DateTime
+    medications            Medication[]
+
+    doctor                 Doctor      @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+    patient                Patient     @relation(fields: [patientId], references: [id], onDelete: Cascade)
+}

@@ -1,0 +1,237 @@
+{
+    "_id": "507f1f77bcf86cd799439011",
+    "userId": "507f1f77bcf86cd799439012",
+    "demographics": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "gender": "Male",
+      "dateOfBirth": "1990-05-20T00:00:00.000Z",
+      "bloodType": "O+",
+      "maritalStatus": "Single",
+      "occupation": "Engineer",
+      "race": "Asian",
+      "ethnicity": "Indian",
+      "language": "English",
+      "religion": "Hindu",
+      "disabilityStatus": "None",
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "medicalHistory": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "chronicDiseases": ["Hypertension"],
+      "pastIllnesses": ["Chickenpox"],
+      "surgeries": [
+        {
+          "name": "Appendectomy",
+          "date": "2015-03-15T00:00:00.000Z",
+          "hospital": "City Hospital",
+          "notes": "Routine procedure"
+        }
+      ],
+      "hospitalizations": [
+        {
+          "reason": "Severe Asthma Attack",
+          "startDate": "2022-06-10T00:00:00.000Z",
+          "endDate": "2022-06-15T00:00:00.000Z",
+          "hospital": "General Hospital",
+          "notes": "Intensive care required"
+        }
+      ],
+      "familyMedicalHistory": [
+        {
+          "condition": "Diabetes",
+          "relationship": "Father",
+          "ageAtDiagnosis": 50,
+          "notes": "Controlled by medication"
+        }
+      ],
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "allergies": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "allergies": [
+        {
+          "name": "Peanuts",
+          "reaction": "Anaphylaxis",
+          "severity": "Severe",
+          "diagnosedDate": "2000-04-12T00:00:00.000Z",
+          "notes": "Carries an epinephrine auto-injector"
+        }
+      ],
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "medications": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "medications": [
+        {
+          "name": "Lisinopril",
+          "dosage": "10mg",
+          "frequency": "Once daily",
+          "route": "Oral",
+          "startDate": "2022-01-10T00:00:00.000Z",
+          "endDate": "2023-01-10T00:00:00.000Z",
+          "effectiveness": "Effective",
+          "sideEffects": ["Mild dizziness"],
+          "notes": "Take in the morning"
+        }
+      ],
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "visits": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "visits": [
+        {
+          "visitId": "507f1f77bcf86cd799439013",
+          "date": "2023-02-15T00:00:00.000Z",
+          "reason": "Routine check-up",
+          "clinic": {
+            "name": "Health Clinic",
+            "address": {
+              "street": "123 Health St",
+              "city": "Metropolis",
+              "state": "MT",
+              "postalCode": "12345",
+              "country": "Countryland"
+            }
+          },
+          "diagnosis": [
+            {
+              "condition": "Mild Hypertension",
+              "severity": "Moderate",
+              "dateDiagnosed": "2023-02-15T00:00:00.000Z",
+              "notes": "Recommended lifestyle changes"
+            }
+          ],
+          "treatments": [
+            {
+              "type": "Medication",
+              "description": "Blood pressure control",
+              "duration": "6 months",
+              "prescribedMedication": [
+                {
+                  "name": "Lisinopril",
+                  "dosage": "10mg",
+                  "frequency": "Once daily",
+                  "route": "Oral",
+                  "startDate": "2022-01-10T00:00:00.000Z",
+                  "endDate": "2023-01-10T00:00:00.000Z", 
+                  "effectiveness": "Effective",
+                  "sideEffects": ["Mild dizziness"],
+                  "notes": "Take in the morning"
+                }
+              ],
+              "notes": "Monitor blood pressure weekly"
+            }
+          ],
+          "followUpDate": "2023-08-15T00:00:00.000Z",
+          "notes": "Next visit in 6 months"
+        }
+      ],
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "tests": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "tests": [
+        {
+          "testName": "Complete Blood Count",
+          "datePerformed": "2023-02-15T00:00:00.000Z",
+          "result": "Normal",
+          "normalRange": "4.5-11 x10^9/L",
+          "units": "x10^9/L",
+          "notes": "Within normal limits",
+          "laboratory": {
+            "name": "Health Lab",
+            "address": {
+              "street": "45 Lab Road",
+              "city": "Metropolis",
+              "state": "MT",
+              "postalCode": "54321",
+              "country": "Countryland"
+            }
+          }
+        }
+      ],
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "prescriptions": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "prescriptions": [
+        {
+          "medication": {
+            "name": "Ibuprofen",
+            "dosage": "200mg",
+            "frequency": "As needed",
+            "route": "Oral",
+            "startDate": "2023-02-15T00:00:00.000Z",
+            "endDate": "2023-03-15T00:00:00.000Z",
+            "effectiveness": "Effective",
+            "sideEffects": ["Nausea"],
+            "notes": "Take with food"
+          },
+          "dateIssued": "2023-02-15T00:00:00.000Z",
+          "notes": "For pain management"
+        }
+      ],
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "immunizations": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "immunizations": [
+        {
+          "vaccine": "MMR",
+          "dateAdministered": "2023-01-01T00:00:00.000Z",
+          "notes": "Routine vaccination"
+        }
+      ],
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "insuranceInfo": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "provider": "Health Insurance Co",
+      "policyNumber": "123456789",
+      "effectiveDate": "2023-01-01T00:00:00.000Z",
+      "expiryDate": "2024-01-01T00:00:00.000Z",
+      "notes": "Policy covers all essential health services",
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "emergencyContacts": {
+      "_id": "507f1f77bcf86cd799439011",
+      "userId": "507f1f77bcf86cd799439012",
+      "contacts": [
+        {
+          "name": "John Doe",
+          "relationship": "Brother",
+          "phone": "123-456-7890",
+          "email": "johndoe@example.com",
+          "address": {
+            "street": "789 Family St",
+            "city": "Metropolis",
+            "state": "MT",
+            "postalCode": "67890",
+            "country": "Countryland"
+          }
+        }
+      ],
+      "createdAt": "2023-01-01T12:00:00Z",
+      "updatedAt": "2023-01-01T12:00:00Z"
+    },
+    "createdAt": "2023-01-01T12:00:00Z",
+    "updatedAt": "2023-01-01T12:00:00Z"
+}
